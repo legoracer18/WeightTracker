@@ -1,6 +1,6 @@
 ﻿namespace WeightTracker
 {
-    partial class Form1
+    partial class weightTrackerWindow
     {
         /// <summary>
         /// Required designer variable.
@@ -52,7 +52,7 @@
             this.currentWeightNum.Location = new System.Drawing.Point(496, 9);
             this.currentWeightNum.Name = "currentWeightNum";
             this.currentWeightNum.Size = new System.Drawing.Size(100, 22);
-            this.currentWeightNum.TabIndex = 0;
+            this.currentWeightNum.TabIndex = 3;
             this.currentWeightNum.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // currentWeightLabel
@@ -63,7 +63,7 @@
             this.currentWeightLabel.Location = new System.Drawing.Point(395, 15);
             this.currentWeightLabel.Name = "currentWeightLabel";
             this.currentWeightLabel.Size = new System.Drawing.Size(95, 16);
-            this.currentWeightLabel.TabIndex = 1;
+            this.currentWeightLabel.TabIndex = 2;
             this.currentWeightLabel.Text = "Current Weight";
             // 
             // weightDifLabel
@@ -74,7 +74,7 @@
             this.weightDifLabel.Location = new System.Drawing.Point(602, 15);
             this.weightDifLabel.Name = "weightDifLabel";
             this.weightDifLabel.Size = new System.Drawing.Size(114, 16);
-            this.weightDifLabel.TabIndex = 2;
+            this.weightDifLabel.TabIndex = 4;
             this.weightDifLabel.Text = "Weight Difference";
             // 
             // weightDifNum
@@ -85,7 +85,7 @@
             this.weightDifNum.Location = new System.Drawing.Point(722, 9);
             this.weightDifNum.Name = "weightDifNum";
             this.weightDifNum.Size = new System.Drawing.Size(100, 22);
-            this.weightDifNum.TabIndex = 4;
+            this.weightDifNum.TabIndex = 5;
             this.weightDifNum.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // dateLabel
@@ -96,7 +96,7 @@
             this.dateLabel.Location = new System.Drawing.Point(188, 15);
             this.dateLabel.Name = "dateLabel";
             this.dateLabel.Size = new System.Drawing.Size(95, 16);
-            this.dateLabel.TabIndex = 6;
+            this.dateLabel.TabIndex = 0;
             this.dateLabel.Text = "Date Weighed";
             // 
             // dateEntered
@@ -106,18 +106,19 @@
             this.dateEntered.Location = new System.Drawing.Point(289, 9);
             this.dateEntered.Name = "dateEntered";
             this.dateEntered.Size = new System.Drawing.Size(100, 22);
-            this.dateEntered.TabIndex = 5;
+            this.dateEntered.TabIndex = 1;
             this.dateEntered.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // weightChart
             // 
-            this.weightChart.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.weightChart.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             chartArea1.Name = "ChartArea1";
             this.weightChart.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
             this.weightChart.Legends.Add(legend1);
-            this.weightChart.Location = new System.Drawing.Point(12, 89);
+            this.weightChart.Location = new System.Drawing.Point(12, 41);
             this.weightChart.Name = "weightChart";
             series1.ChartArea = "ChartArea1";
             series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
@@ -127,8 +128,9 @@
             series1.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Date;
             series1.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
             this.weightChart.Series.Add(series1);
-            this.weightChart.Size = new System.Drawing.Size(806, 342);
-            this.weightChart.TabIndex = 7;
+            this.weightChart.Size = new System.Drawing.Size(810, 388);
+            this.weightChart.TabIndex = 8;
+            this.weightChart.ChartAreas[0].AxisY.Minimum = 100;
             // 
             // saveButton
             // 
@@ -136,7 +138,7 @@
             this.saveButton.Location = new System.Drawing.Point(93, 12);
             this.saveButton.Name = "saveButton";
             this.saveButton.Size = new System.Drawing.Size(75, 23);
-            this.saveButton.TabIndex = 8;
+            this.saveButton.TabIndex = 7;
             this.saveButton.Text = "Save";
             this.saveButton.UseVisualStyleBackColor = true;
             this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
@@ -146,12 +148,12 @@
             this.openButton.Location = new System.Drawing.Point(12, 12);
             this.openButton.Name = "openButton";
             this.openButton.Size = new System.Drawing.Size(75, 23);
-            this.openButton.TabIndex = 9;
+            this.openButton.TabIndex = 6;
             this.openButton.Text = "Open";
             this.openButton.UseVisualStyleBackColor = true;
             this.openButton.Click += new System.EventHandler(this.openButton_Click);
             // 
-            // Form1
+            // weightTrackerWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -166,9 +168,8 @@
             this.Controls.Add(this.currentWeightLabel);
             this.Controls.Add(this.currentWeightNum);
             this.MinimumSize = new System.Drawing.Size(850, 480);
-            this.Name = "Form1";
-            this.Text = "Tracker";
-            this.Load += new System.EventHandler(this.Form1_Load);
+            this.Name = "weightTrackerWindow";
+            this.Text = "Weight Tracker";
             ((System.ComponentModel.ISupportInitialize)(this.weightChart)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

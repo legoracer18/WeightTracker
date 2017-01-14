@@ -1,0 +1,9 @@
+C:\Users\jpark\Documents\Visual Studio 2015\Projects\WeightTracker\WeightTracker\bin\Release\WeightTracker.exe.config
+C:\Users\jpark\Documents\Visual Studio 2015\Projects\WeightTracker\WeightTracker\bin\Release\WeightTracker.exe
+C:\Users\jpark\Documents\Visual Studio 2015\Projects\WeightTracker\WeightTracker\bin\Release\WeightTracker.pdb
+C:\Users\jpark\Documents\Visual Studio 2015\Projects\WeightTracker\WeightTracker\obj\Release\WeightTracker.csprojResolveAssemblyReference.cache
+C:\Users\jpark\Documents\Visual Studio 2015\Projects\WeightTracker\WeightTracker\obj\Release\WeightTracker.weightTrackerWindow.resources
+C:\Users\jpark\Documents\Visual Studio 2015\Projects\WeightTracker\WeightTracker\obj\Release\WeightTracker.Properties.Resources.resources
+C:\Users\jpark\Documents\Visual Studio 2015\Projects\WeightTracker\WeightTracker\obj\Release\WeightTracker.csproj.GenerateResource.Cache
+C:\Users\jpark\Documents\Visual Studio 2015\Projects\WeightTracker\WeightTracker\obj\Release\WeightTracker.exe
+C:\Users\jpark\Documents\Visual Studio 2015\Projects\WeightTracker\WeightTracker\obj\Release\WeightTracker.pdb

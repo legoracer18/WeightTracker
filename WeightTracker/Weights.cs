@@ -8,16 +8,16 @@ namespace WeightTracker
 {
     public class Weights
     {
-        private string date;
-        private string weightNum;
+        private DateTime date;
+        private double weightNum;
 
-        public string Date
+        public DateTime Date
         {
             get { return date; }
             set { date = value; }
         }
 
-        public string WeightNum
+        public double WeightNum
         {
             get { return weightNum; }
             set { weightNum = value; }
