@@ -31,6 +31,7 @@
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(weightTrackerWindow));
             this.currentWeightNum = new System.Windows.Forms.TextBox();
             this.currentWeightLabel = new System.Windows.Forms.Label();
             this.weightDifLabel = new System.Windows.Forms.Label();
@@ -130,7 +131,6 @@
             this.weightChart.Series.Add(series1);
             this.weightChart.Size = new System.Drawing.Size(810, 388);
             this.weightChart.TabIndex = 8;
-            this.weightChart.ChartAreas[0].AxisY.Minimum = 100;
             // 
             // saveButton
             // 
@@ -167,6 +167,7 @@
             this.Controls.Add(this.weightDifLabel);
             this.Controls.Add(this.currentWeightLabel);
             this.Controls.Add(this.currentWeightNum);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(850, 480);
             this.Name = "weightTrackerWindow";
             this.Text = "Weight Tracker";
