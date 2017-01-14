@@ -6,3 +6,4 @@ c:\users\jpark\documents\visual studio 2015\Projects\WeightTracker\WeightTracker
 c:\users\jpark\documents\visual studio 2015\Projects\WeightTracker\WeightTracker\obj\Debug\WeightTracker.csproj.GenerateResource.Cache
 c:\users\jpark\documents\visual studio 2015\Projects\WeightTracker\WeightTracker\obj\Debug\WeightTracker.exe
 c:\users\jpark\documents\visual studio 2015\Projects\WeightTracker\WeightTracker\obj\Debug\WeightTracker.pdb
+C:\Users\jpark\Documents\Visual Studio 2015\Projects\WeightTracker\WeightTracker\obj\Debug\WeightTracker.Form1.resources

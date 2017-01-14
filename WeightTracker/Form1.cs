@@ -50,21 +50,5 @@ namespace WeightTracker
         }
     }
 
-    public class Weights
-    {
-        private string date;
-        private string weightNum;
-
-        public string Date
-        {
-            get { return date; }
-            set { date = value; }
-        }
-
-        public string WeightNum
-        {
-            get { return weightNum; }
-            set { weightNum = value; }
-        }
-    }
+    
 }
