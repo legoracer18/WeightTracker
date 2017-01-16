@@ -1,9 +1,0 @@
-C:\Users\jpark\Documents\Visual Studio 2015\Projects\WeightTracker\WeightTracker\bin\Debug\WeightTracker.exe.config
-C:\Users\jpark\Documents\Visual Studio 2015\Projects\WeightTracker\WeightTracker\obj\Debug\WeightTracker.exe
-C:\Users\jpark\Documents\Visual Studio 2015\Projects\WeightTracker\WeightTracker\obj\Debug\WeightTracker.pdb
-C:\Users\jpark\Documents\Visual Studio 2015\Projects\WeightTracker\WeightTracker\bin\Debug\WeightTracker.exe
-C:\Users\jpark\Documents\Visual Studio 2015\Projects\WeightTracker\WeightTracker\bin\Debug\WeightTracker.pdb
-C:\Users\jpark\Documents\Visual Studio 2015\Projects\WeightTracker\WeightTracker\obj\Debug\Tracker.csprojResolveAssemblyReference.cache
-C:\Users\jpark\Documents\Visual Studio 2015\Projects\WeightTracker\WeightTracker\obj\Debug\WeightTracker.Form1.resources
-C:\Users\jpark\Documents\Visual Studio 2015\Projects\WeightTracker\WeightTracker\obj\Debug\WeightTracker.Properties.Resources.resources
-C:\Users\jpark\Documents\Visual Studio 2015\Projects\WeightTracker\WeightTracker\obj\Debug\Tracker.csproj.GenerateResource.Cache
