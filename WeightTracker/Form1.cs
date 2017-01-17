@@ -115,11 +115,28 @@ namespace WeightTracker
                 double startWeight = sortedList[0].WeightNum;
                 int listCount = sortedList.Count - 1;
                 double lastWeight = sortedList[listCount].WeightNum;
-                string difference = "";
+                string differencePercent = "";
+                string differencePounds = "";
+                double differenceNum = lastWeight - startWeight;
+                double differencePer = (differenceNum / startWeight) * 100;
+                differencePer = Math.Truncate(100 * differencePer) / 100;
 
-                difference = Convert.ToString(lastWeight - startWeight);
-
-                weightDifNum.Text = difference;
+                if (differenceNum < 0)
+                {
+                    differenceNum = differenceNum * -1;
+                    differencePer = differencePer * -1;
+                    differencePercent =  "Lost " + Convert.ToString(differencePer) + "%";
+                    weightDifPer.Text = differencePercent;
+                    differencePounds = "Lost " + Convert.ToString(differenceNum) + "lb(s)";
+                    weightDifNum.Text = differencePounds;
+                }
+                else
+                {
+                    differencePercent = "Gained " + Convert.ToString(differencePer) + "%";
+                    weightDifPer.Text = differencePercent;
+                    differencePounds = "Gained " + Convert.ToString(differenceNum) + " lb";
+                    weightDifNum.Text = differencePounds;
+                }
             }
             else
             {
