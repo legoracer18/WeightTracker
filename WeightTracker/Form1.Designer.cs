@@ -34,7 +34,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(weightTrackerWindow));
             this.currentWeightNum = new System.Windows.Forms.TextBox();
             this.currentWeightLabel = new System.Windows.Forms.Label();
-            this.weightDifLabel = new System.Windows.Forms.Label();
             this.weightDifNum = new System.Windows.Forms.Label();
             this.dateLabel = new System.Windows.Forms.Label();
             this.dateEntered = new System.Windows.Forms.TextBox();
@@ -44,14 +43,17 @@
             this.openButton = new System.Windows.Forms.Button();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.weightDifPer = new System.Windows.Forms.Label();
+            this.lostGained = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.pleaseWaitLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.weightChart)).BeginInit();
             this.SuspendLayout();
             // 
             // currentWeightNum
             // 
-            this.currentWeightNum.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.currentWeightNum.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.currentWeightNum.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.currentWeightNum.Location = new System.Drawing.Point(496, 37);
+            this.currentWeightNum.Location = new System.Drawing.Point(497, 37);
             this.currentWeightNum.Name = "currentWeightNum";
             this.currentWeightNum.Size = new System.Drawing.Size(100, 22);
             this.currentWeightNum.TabIndex = 3;
@@ -59,32 +61,21 @@
             // 
             // currentWeightLabel
             // 
-            this.currentWeightLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.currentWeightLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.currentWeightLabel.AutoSize = true;
             this.currentWeightLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.currentWeightLabel.Location = new System.Drawing.Point(395, 43);
+            this.currentWeightLabel.Location = new System.Drawing.Point(396, 43);
             this.currentWeightLabel.Name = "currentWeightLabel";
             this.currentWeightLabel.Size = new System.Drawing.Size(95, 16);
             this.currentWeightLabel.TabIndex = 2;
             this.currentWeightLabel.Text = "Current Weight";
-            // 
-            // weightDifLabel
-            // 
-            this.weightDifLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.weightDifLabel.AutoSize = true;
-            this.weightDifLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.weightDifLabel.Location = new System.Drawing.Point(602, 27);
-            this.weightDifLabel.Name = "weightDifLabel";
-            this.weightDifLabel.Size = new System.Drawing.Size(114, 16);
-            this.weightDifLabel.TabIndex = 4;
-            this.weightDifLabel.Text = "Weight Difference";
             // 
             // weightDifNum
             // 
             this.weightDifNum.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.weightDifNum.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.weightDifNum.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.weightDifNum.Location = new System.Drawing.Point(722, 9);
+            this.weightDifNum.Location = new System.Drawing.Point(616, 37);
             this.weightDifNum.Name = "weightDifNum";
             this.weightDifNum.Size = new System.Drawing.Size(100, 22);
             this.weightDifNum.TabIndex = 5;
@@ -92,10 +83,10 @@
             // 
             // dateLabel
             // 
-            this.dateLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.dateLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.dateLabel.AutoSize = true;
             this.dateLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateLabel.Location = new System.Drawing.Point(395, 15);
+            this.dateLabel.Location = new System.Drawing.Point(189, 43);
             this.dateLabel.Name = "dateLabel";
             this.dateLabel.Size = new System.Drawing.Size(95, 16);
             this.dateLabel.TabIndex = 0;
@@ -103,9 +94,9 @@
             // 
             // dateEntered
             // 
-            this.dateEntered.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.dateEntered.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.dateEntered.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateEntered.Location = new System.Drawing.Point(496, 9);
+            this.dateEntered.Location = new System.Drawing.Point(290, 37);
             this.dateEntered.Name = "dateEntered";
             this.dateEntered.Size = new System.Drawing.Size(100, 22);
             this.dateEntered.TabIndex = 1;
@@ -132,6 +123,8 @@
             this.weightChart.Series.Add(series1);
             this.weightChart.Size = new System.Drawing.Size(810, 364);
             this.weightChart.TabIndex = 8;
+            this.weightChart.Text = "Please Load or Save a file to see the graph.";
+            this.weightChart.Visible = false;
             // 
             // saveButton
             // 
@@ -165,11 +158,47 @@
             this.weightDifPer.TabIndex = 10;
             this.weightDifPer.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
+            // lostGained
+            // 
+            this.lostGained.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lostGained.AutoSize = true;
+            this.lostGained.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lostGained.Location = new System.Drawing.Point(662, 15);
+            this.lostGained.Name = "lostGained";
+            this.lostGained.Size = new System.Drawing.Size(144, 16);
+            this.lostGained.TabIndex = 11;
+            this.lostGained.Text = "Load file to see results.";
+            // 
+            // label1
+            // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(342, 15);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(114, 16);
+            this.label1.TabIndex = 12;
+            this.label1.Text = "Enter in new entry.";
+            // 
+            // pleaseWaitLabel
+            // 
+            this.pleaseWaitLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.pleaseWaitLabel.AutoSize = true;
+            this.pleaseWaitLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pleaseWaitLabel.Location = new System.Drawing.Point(73, 202);
+            this.pleaseWaitLabel.Name = "pleaseWaitLabel";
+            this.pleaseWaitLabel.Size = new System.Drawing.Size(691, 31);
+            this.pleaseWaitLabel.TabIndex = 13;
+            this.pleaseWaitLabel.Text = "Please Open a file or Save a new entry to see the graph.";
+            // 
             // weightTrackerWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(834, 441);
+            this.Controls.Add(this.pleaseWaitLabel);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lostGained);
             this.Controls.Add(this.weightDifPer);
             this.Controls.Add(this.openButton);
             this.Controls.Add(this.saveButton);
@@ -177,7 +206,6 @@
             this.Controls.Add(this.dateLabel);
             this.Controls.Add(this.dateEntered);
             this.Controls.Add(this.weightDifNum);
-            this.Controls.Add(this.weightDifLabel);
             this.Controls.Add(this.currentWeightLabel);
             this.Controls.Add(this.currentWeightNum);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -194,7 +222,6 @@
 
         private System.Windows.Forms.TextBox currentWeightNum;
         private System.Windows.Forms.Label currentWeightLabel;
-        private System.Windows.Forms.Label weightDifLabel;
         private System.Windows.Forms.Label weightDifNum;
         private System.Windows.Forms.Label dateLabel;
         private System.Windows.Forms.TextBox dateEntered;
@@ -204,6 +231,9 @@
         private System.Windows.Forms.Button openButton;
         private System.Windows.Forms.OpenFileDialog openFileDialog;
         private System.Windows.Forms.Label weightDifPer;
+        private System.Windows.Forms.Label lostGained;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label pleaseWaitLabel;
     }
 }
 

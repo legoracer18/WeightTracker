@@ -105,6 +105,8 @@ namespace WeightTracker
             weightChart.Series["Weight"].Points.Clear();
             foreach (var el in chartList)
                 this.weightChart.Series["Weight"].Points.AddXY(el.Date.ToShortDateString(), el.WeightNum.ToString());
+            this.weightChart.Visible = true;
+            this.pleaseWaitLabel.Visible = false;
             chartList.Clear();
         }
 
@@ -125,16 +127,18 @@ namespace WeightTracker
                 {
                     differenceNum = differenceNum * -1;
                     differencePer = differencePer * -1;
-                    differencePercent =  "Lost " + Convert.ToString(differencePer) + "%";
+                    lostGained.Text = "You have lost:";
+                    differencePercent =  Convert.ToString(differencePer) + "%";
                     weightDifPer.Text = differencePercent;
-                    differencePounds = "Lost " + Convert.ToString(differenceNum) + "lb(s)";
+                    differencePounds = Convert.ToString(differenceNum) + " lb";
                     weightDifNum.Text = differencePounds;
                 }
                 else
                 {
-                    differencePercent = "Gained " + Convert.ToString(differencePer) + "%";
+                    lostGained.Text = "You have gained:";
+                    differencePercent = Convert.ToString(differencePer) + "%";
                     weightDifPer.Text = differencePercent;
-                    differencePounds = "Gained " + Convert.ToString(differenceNum) + " lb";
+                    differencePounds = Convert.ToString(differenceNum) + " lb";
                     weightDifNum.Text = differencePounds;
                 }
             }
