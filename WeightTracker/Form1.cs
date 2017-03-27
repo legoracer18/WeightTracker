@@ -102,9 +102,21 @@ namespace WeightTracker
 
         private void loadChart()
         {
+            int max = 100;
+            int min = 300;
+
             weightChart.Series["Weight"].Points.Clear();
             foreach (var el in chartList)
+            {
                 this.weightChart.Series["Weight"].Points.AddXY(el.Date.ToShortDateString(), el.WeightNum.ToString());
+                if (min + 10 > el.WeightNum)
+                    min = Convert.ToInt16(el.WeightNum) - 10;
+                if (max - 10 < el.WeightNum)
+                    max = Convert.ToInt16(el.WeightNum) + 10;
+                
+            }
+            this.weightChart.ChartAreas[0].AxisY.Minimum = min;
+            this.weightChart.ChartAreas[0].AxisY.Maximum = max;
             this.weightChart.Visible = true;
             this.pleaseWaitLabel.Visible = false;
             chartList.Clear();
@@ -120,6 +132,7 @@ namespace WeightTracker
                 string differencePercent = "";
                 string differencePounds = "";
                 double differenceNum = lastWeight - startWeight;
+                differenceNum = Math.Truncate(100 * differenceNum) / 100;
                 double differencePer = (differenceNum / startWeight) * 100;
                 differencePer = Math.Truncate(100 * differencePer) / 100;
 
@@ -130,7 +143,7 @@ namespace WeightTracker
                     lostGained.Text = "You have lost:";
                     differencePercent =  Convert.ToString(differencePer) + "%";
                     weightDifPer.Text = differencePercent;
-                    differencePounds = Convert.ToString(differenceNum) + " lb";
+                    differencePounds = Convert.ToString(differenceNum) + " lbs";
                     weightDifNum.Text = differencePounds;
                 }
                 else
@@ -138,7 +151,7 @@ namespace WeightTracker
                     lostGained.Text = "You have gained:";
                     differencePercent = Convert.ToString(differencePer) + "%";
                     weightDifPer.Text = differencePercent;
-                    differencePounds = Convert.ToString(differenceNum) + " lb";
+                    differencePounds = Convert.ToString(differenceNum) + " lbs";
                     weightDifNum.Text = differencePounds;
                 }
             }
